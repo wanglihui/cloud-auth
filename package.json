@@ -1,7 +1,7 @@
 {
-  "name": "cloud-template",
+  "name": "cloud-auth",
   "version": "0.0.1",
-  "description": "cloud project template",
+  "description": "cloud auth",
   "main": "dist/main.js",
   "dependencies": {
     "cloud-registry-client": "0.0.9",

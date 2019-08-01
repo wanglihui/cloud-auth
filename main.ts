@@ -7,11 +7,11 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-// app.use(bodyParser.raw());
+app.use(bodyParser.raw());
 const router = express.Router();
 
 scannerDecoration(path.resolve(__dirname, 'server'), [/\.js$/, /\.js\.map$/, /\.\d.ts$/]);
-registerControllerToRouter(router);
+registerControllerToRouter(router, {isShowUrls: true});
 
 app.use('/api/v1', router);
 
@@ -19,7 +19,7 @@ import * as http from 'http';
 import * as net from 'net';
 async function main() {
     await startServer({
-        registry: "http://localhost:5000/api/v1/app"
+        registry: "http://localhost:8080/api/v1/app"
     });
 }
 
